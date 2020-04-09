@@ -1,3 +1,4 @@
+
 print "Use the J and K keys to move the paddle" 
 
 fastgraphics
@@ -9,6 +10,7 @@ bally = 0
 ballxinc = 5 
 ballyinc = 5 
 xinc = 5 
+speed = .04	## make speed smaller to play faster
 
 loop1: 
 a = key 
@@ -26,9 +28,9 @@ goto loop1
 drawpaddle: 
 color gray 
 rect 0,0,300,300 
-color darkblue 
+color darkred 
 rect x,y,100,10 
-color blue 
+color red 
 rect x+1,y+1,98,8 
 return 
 
@@ -39,6 +41,7 @@ if bally > 270 then gosub checkball
 if bally < 5 then ballyinc = -ballyinc 
 if ballx > 295 then ballxinc = -ballxinc 
 if ballx < 5 then ballxinc = -ballxinc 
+pause speed
 return 
 
 checkball: 
